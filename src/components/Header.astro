@@ -1,0 +1,17 @@
+---
+import { Image } from 'astro:assets'
+import logo from '../assets/logoBlanco.png'
+---
+
+<header>
+  <Image src={logo} alt="logo oox" class="image" />
+</header>
+
+<style>
+  header {
+    @apply bg-black p-2;
+  }
+  .image {
+    @apply mx-auto h-12 w-auto;
+  }
+</style>

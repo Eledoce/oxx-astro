@@ -1,0 +1,49 @@
+---
+import { Image } from 'astro:assets'
+import Cable from '../../content/cableRudo/4x14.webp'
+import { SiMercadopago } from 'react-icons/si'
+import { FaAmazon } from 'react-icons/fa'
+import { FaWhatsapp } from 'react-icons/fa'
+---
+
+<article>
+  <section>
+    <Image src={Cable} alt="Cable Rudo 4x14" class="image" />
+  </section>
+  <section>
+    description
+    <a href="#" class="bg-yellow-300 py-1 font-semibold">
+      Mercado libre
+      <SiMercadopago className="text-3xl" />
+    </a>
+    <a href="#" class="bg-gray-300 py-2 font-bold">
+      Amazon
+      <FaAmazon className="text-2xl" />
+    </a>
+    <a href="#" class="bg-[#25D366] text-white py-2">
+      Whatsapp
+      <FaWhatsapp className="text-2xl" />
+    </a>
+  </section>
+</article>
+
+<style>
+  article {
+    @apply flex items-center flex-col border h-72;
+  }
+
+  article section:first-child {
+    @apply h-20;
+  }
+
+  article section:last-child {
+    @apply flex flex-col gap-2 w-full;
+  }
+
+  .image {
+    @apply h-full w-auto object-cover;
+  }
+  a {
+    @apply flex items-center justify-center gap-2 rounded-xl w-3/4 mx-auto hover:scale-105 transition-all;
+  }
+</style>
