@@ -1,12 +1,22 @@
 ---
+import type { DetailsType } from '@/env'
+import type { AstroInstance } from 'astro'
+
+type CardProps = { details: DetailsType }
+
 import Card from './Card.astro'
+const prods = (await Astro.glob(
+  '../../pages/productos/*.astro'
+)) as AstroInstance[]
 ---
 
 <section>
   {
-    Array(9)
-      .fill(5)
-      .map((_, i) => <Card key={i} />)
+    prods.map((product: AstroInstance & CardProps) => {
+      const details: DetailsType = product.details
+      const urlSplit = product.url.split('/').slice(-4).join('/').split('.')[0]
+      return <Card {...details} url={urlSplit} />
+    })
   }
 </section>
 

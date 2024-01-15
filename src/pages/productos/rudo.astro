@@ -1,0 +1,17 @@
+---
+import { DetailsType } from '../../env'
+import LayoutProduct from '../../layouts/LayoutProd.astro'
+export const details: DetailsType = {
+  title: 'Cable uso rudo ',
+  description:
+    "Codecademy is the easiest way to learn how to code. It's interactive, fun, and you can do it with your friends.",
+  image: '4x14.webp',
+  // url con la direccion del archivo actual en base a astro
+}
+---
+
+<LayoutProduct title={details.title}>
+  <main>
+    <h1>{details.title}</h1>
+  </main>
+</LayoutProduct>
