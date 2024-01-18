@@ -9,4 +9,7 @@ export default defineConfig({
   server: {
     host: true,
   },
+
+  site: 'https://eledoce.github.io/',
+  base: 'oxx-astro',
 })

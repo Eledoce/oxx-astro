@@ -5,22 +5,29 @@ interface Props {
 
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
+import { ViewTransitions } from 'astro:transitions'
 
 const { title } = Astro.props
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <ViewTransitions />
     <title>{title}</title>
   </head>
   <body>
     <Header />
     <slot />
     <Footer />
+    <style is:global>
+      .bborder {
+        @apply border border-black;
+      }
+    </style>
   </body>
 </html>

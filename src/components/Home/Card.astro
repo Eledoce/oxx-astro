@@ -2,9 +2,15 @@
 import type { DetailsType } from '../../env'
 
 const { title, description, image, url } = Astro.props
+// limitando descripcion a 100 caracteres
+let descriptionLimit = description ? description.slice(0, 100) : null
+descriptionLimit = descriptionLimit ? `${descriptionLimit}...` : null
 ---
 
-<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow">
+<div
+  class="max-w-sm bg-white border border-gray-200 rounded-lg shadow flex flex-col"
+  transition:name={`image-${image}`}
+>
   <a href="#">
     <img
       class="rounded-t-lg h-60 mx-auto pt-5"
@@ -12,18 +18,17 @@ const { title, description, image, url } = Astro.props
       alt="img prods"
     />
   </a>
-  <div class="p-5">
-    <a href="#">
-      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
-        {title ? title : 'no title'}
-      </h5>
-    </a>
+  <div class="p-5 flex flex-col grow">
+    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+      {title ? title : 'no title'}
+    </h5>
+
     <p class="mb-3 font-normal text-gray-700">
-      {description ? description : 'no description'}
+      {description ? descriptionLimit : 'no description'}
     </p>
     <a
       href={url ? url : '/'}
-      class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300"
+      class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 w-fit mt-auto transition-colors"
     >
       Detalles
       <svg
