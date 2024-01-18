@@ -1,0 +1,21 @@
+---
+import type { DetailsType } from '@/env'
+import LayoutProduct from '@/layouts/LayoutProd.astro'
+import OverviewProd from '@/components/OverviewProd.astro'
+
+export const details: DetailsType = {
+  title: 'Medidor De Gas Inalámbrico Tracker Game-lts-u',
+  description:
+    'Medidor inalámbrico GAS L.P para lugares remotos. Lee en litros y porcentaje. Fácil programación según medida del tanque',
+  image: 'game-lts-u.webp',
+  urlMercado:
+    'https://articulo.mercadolibre.com.mx/MLM-1617553054-medidor-de-gas-inalambrico-tracker-game-lts-u-_JM#position=32&search_layout=grid&type=item&tracking_id=3683b008-fe60-4dba-b445-d254037a8e20',
+  urlAmazon: '',
+}
+---
+
+<LayoutProduct title={details.title}>
+  <main>
+    <OverviewProd {...details} />
+  </main>
+</LayoutProduct>

@@ -1,0 +1,21 @@
+---
+import type { DetailsType } from '@/env'
+import LayoutProduct from '@/layouts/LayoutProd.astro'
+import OverviewProd from '@/components/OverviewProd.astro'
+
+export const details: DetailsType = {
+  title: 'Medidor De Gas Para Tanque Estacionario Tracker Game-lts',
+  description:
+    'Medidor remoto GAS L.P TRACKER: Controla carga desde planta baja, evita subir. Instalación fácil, lectura precisa en litros',
+  image: 'game-lts.webp',
+  urlMercado:
+    'https://articulo.mercadolibre.com.mx/MLM-1555593325-medidor-de-gas-para-tanque-estacionario-tracker-game-lts-_JM#position=27&search_layout=grid&type=item&tracking_id=3683b008-fe60-4dba-b445-d254037a8e20',
+  urlAmazon: '',
+}
+---
+
+<LayoutProduct title={details.title}>
+  <main>
+    <OverviewProd {...details} />
+  </main>
+</LayoutProduct>

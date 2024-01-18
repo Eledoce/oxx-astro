@@ -1,0 +1,21 @@
+---
+import type { DetailsType } from '@/env'
+import LayoutProduct from '@/layouts/LayoutProd.astro'
+import OverviewProd from '@/components/OverviewProd.astro'
+
+export const details: DetailsType = {
+  title: 'Medidor De Gas Para Carburacion Tracker Game-0104-1a',
+  description:
+    'Medidor remoto para tanque de gas de Carburacion para conexión 12V de fácil instalación',
+  image: 'carbu-1a.webp',
+  urlMercado:
+    'https://articulo.mercadolibre.com.mx/MLM-1617553751-medidor-de-gas-para-carburacion-tracker-game-0104-1a-_JM#position=40&search_layout=grid&type=item&tracking_id=8e210834-2ff0-4044-9558-5307d73ffcb5',
+  urlAmazon: '',
+}
+---
+
+<LayoutProduct title={details.title}>
+  <main class="border">
+    <OverviewProd {...details} />
+  </main>
+</LayoutProduct>

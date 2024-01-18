@@ -1,0 +1,75 @@
+---
+import { SiMercadopago } from 'react-icons/si'
+import { BsAmazon as FaAmazon } from 'react-icons/bs'
+import baseUrl from '@/scripts/base'
+
+const { title, description, image, urlMercado, urlAmazon } = Astro.props
+---
+
+<section>
+  <div class="img-cover">
+    <img
+      src={`${baseUrl}/prods/${image}`}
+      alt={title}
+      transition:name={`image-${image}`}
+      class="img-cover h-full mx-auto"
+    />
+  </div>
+  <div class="div-info">
+    <h1>{title}</h1>
+    <p>
+      {description}
+    </p>
+
+    <h4>Comprar en:</h4>
+    <a
+      href={urlMercado ? urlMercado : '#'}
+      target={urlMercado ? '_blank' : ''}
+      class:list={[
+        'urlProduct mercado',
+        { 'opacity-50 cursor-not-allowed': !urlMercado },
+      ]}>Mercado libre <SiMercadopago className="text-4xl" /></a
+    >
+    <a
+      href={urlAmazon ? urlAmazon : '#'}
+      target={urlAmazon ? '_blank' : ''}
+      class:list={[
+        'urlProduct amazon',
+        { 'opacity-30 cursor-not-allowed': !urlAmazon },
+      ]}>Amazon <FaAmazon className="text-2xl pt-1" /></a
+    >
+  </div>
+</section>
+
+<style>
+  section {
+    @apply flex pt-16;
+  }
+
+  .img-cover {
+    @apply w-1/2;
+  }
+
+  .div-info {
+    @apply w-1/2 px-20;
+  }
+
+  h1 {
+    @apply text-4xl font-semibold;
+  }
+
+  p {
+    @apply text-lg text-gray-700;
+  }
+
+  .mercado {
+    @apply bg-yellow-400 p-2 border-yellow-500;
+  }
+  .amazon {
+    @apply bg-gray-900 text-white p-3 border-gray-950;
+  }
+
+  .urlProduct {
+    @apply mt-5 text-xl font-semibold flex items-center gap-3 hover:shadow  justify-center border rounded-md;
+  }
+</style>

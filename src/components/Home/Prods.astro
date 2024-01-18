@@ -6,7 +6,7 @@ type CardProps = { details: DetailsType }
 
 import Card from './Card.astro'
 const prods = (await Astro.glob(
-  '../../pages/productos/*.astro'
+  '../../pages/productos/**/*.astro'
 )) as AstroInstance[]
 ---
 

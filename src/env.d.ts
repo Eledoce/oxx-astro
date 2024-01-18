@@ -5,4 +5,6 @@ export type DetailsType = {
   title: string
   description: string
   image: string
+  urlMercado: string
+  urlAmazon: string
 }

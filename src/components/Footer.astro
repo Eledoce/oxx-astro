@@ -1,5 +1,6 @@
 ---
 const year = new Date().getFullYear()
+import baseUrl from '@/scripts/base'
 ---
 
 <footer class="bg-white rounded-lg shadow m-4">
@@ -11,19 +12,27 @@ const year = new Date().getFullYear()
     -->
 
       <img
-        src="/oxx-and-text.svg"
+        src=`${baseUrl}/oox-and-text.svg`
         class="h-32 rounded-md bg-white mx-auto mb-5 md:mx-0"
-        alt="Flowbite Logo"
+        alt="oxx logo"
       />
 
       <ul
         class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0"
       >
         <li>
-          <a href="#" class="hover:underline me-4 md:me-6">Mercado libre</a>
+          <a
+            href="https://listado.mercadolibre.com.mx/_Desde_49_CustId_253831744_NoIndex_True?item_id=MLM895741500&category_id=MLM455454&seller_id=253831744&client=recoview-selleritems&recos_listing=true"
+            target="_blank"
+            class="hover:underline me-4 md:me-6">Mercado libre</a
+          >
         </li>
         <li>
-          <a href="#" class="hover:underline me-4 md:me-6">Amazon</a>
+          <a
+            href="https://www.amazon.com.mx/s?me=AO2YXMW0NX1Z&marketplaceID=A1AM78C64UM0Y8"
+            target="_blank"
+            class="hover:underline me-4 md:me-6">Amazon</a
+          >
         </li>
         <li>
           <a href="#" class="hover:underline me-4 md:me-6">...</a>
