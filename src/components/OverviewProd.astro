@@ -12,16 +12,16 @@ const { title, description, image, urlMercado, urlAmazon } = Astro.props
       src={`${baseUrl}/prods/${image}`}
       alt={title}
       transition:name={`image-${image}`}
-      class="img-cover h-full mx-auto"
+      class="img-cover w-auto h-full object-contain md:mx-auto"
     />
   </div>
   <div class="div-info">
-    <h1>{title}</h1>
+    <h1 transition:name={`title-${image}`}>{title}</h1>
     <p>
       {description}
     </p>
 
-    <h4>Comprar en:</h4>
+    <h4 class="pt-16">Disponible en:</h4>
     <a
       href={urlMercado ? urlMercado : '#'}
       target={urlMercado ? '_blank' : ''}
@@ -43,23 +43,23 @@ const { title, description, image, urlMercado, urlAmazon } = Astro.props
 
 <style>
   section {
-    @apply flex pt-16;
+    @apply flex pt-16 flex-col md:flex-row;
   }
 
   .img-cover {
-    @apply w-1/2;
+    @apply w-full md:w-1/2 h-96  my-auto;
   }
 
   .div-info {
-    @apply w-1/2 px-20;
+    @apply w-full md:w-1/2 px-10 md:px-20;
   }
 
   h1 {
-    @apply text-4xl font-semibold;
+    @apply text-3xl md:text-4xl font-bold text-pretty text-center py-5 font-Inter;
   }
 
   p {
-    @apply text-lg text-gray-700;
+    @apply text-lg text-gray-700 font-Roboto;
   }
 
   .mercado {
@@ -70,6 +70,6 @@ const { title, description, image, urlMercado, urlAmazon } = Astro.props
   }
 
   .urlProduct {
-    @apply mt-5 text-xl font-semibold flex items-center gap-3 hover:shadow  justify-center border rounded-md;
+    @apply mt-2 md:mt-3 text-xl font-semibold flex items-center gap-3 hover:shadow  justify-center border rounded-md;
   }
 </style>

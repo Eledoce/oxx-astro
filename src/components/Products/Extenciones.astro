@@ -5,7 +5,7 @@ import type { AstroInstance } from 'astro'
 import Card from './Card.astro'
 
 const prods = (await Astro.glob(
-  '../../pages/productos/medidoresGas/*.astro'
+  '../../pages/productos/extencionesMed/*.astro'
 )) as AstroInstance[]
 ---
 
@@ -21,6 +21,6 @@ const prods = (await Astro.glob(
 
 <style>
   section {
-    @apply grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-7 p-3 md:w-11/12 2xl:w-3/4 mx-auto;
+    @apply grid grid-cols-1 md:grid-cols-4 gap-3 p-3  md:w-full mx-auto;
   }
 </style>

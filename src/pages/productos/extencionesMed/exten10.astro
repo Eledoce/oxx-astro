@@ -1,0 +1,20 @@
+---
+import type { DetailsType } from '@/env'
+import LayoutProd from '@/layouts/LayoutProd.astro'
+import OverviewProd from '@/components/OverviewProd.astro'
+
+export const details: DetailsType = {
+  title: 'Extensión Medidor Gas Tracker 10m',
+  description: 'Ensamblados de fábrica',
+  image: '/exten/exten1.webp',
+  urlMercado:
+    'https://articulo.mercadolibre.com.mx/MLM-1617556864-cable-extension-para-medidor-de-gas-tracker-10-metros-_JM#position=10&search_layout=grid&type=item&tracking_id=ea5aea65-26d1-472d-aebe-f0bc3413445b',
+  urlAmazon: '',
+}
+---
+
+<LayoutProd {...details}>
+  <main>
+    <OverviewProd {...details} />
+  </main>
+</LayoutProd>
