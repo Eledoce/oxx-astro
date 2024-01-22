@@ -1,0 +1,22 @@
+---
+import type { DetailsType } from '@/env'
+import LayoutProd from '@/layouts/LayoutProd.astro'
+import OverviewProd from '@/components/OverviewProd.astro'
+
+export const details: DetailsType = {
+  title: 'Medidor Inalámbrico Levelgas para tanque de Gas Estacionario',
+  description:
+    'Es un medidor inalámbrico para conocer el nivel de gas de tu tanque en tu teléfono móvil de forma sencilla, cómoda y segura. ',
+  image: 'levelgas.webp',
+  urlMercado: '',
+  urlAmazon: '',
+  keywords: [],
+  popular: false,
+}
+---
+
+<LayoutProd {...details}>
+  <main>
+    <OverviewProd {...details} />
+  </main>
+</LayoutProd>

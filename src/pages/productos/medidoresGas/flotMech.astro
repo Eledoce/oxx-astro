@@ -1,0 +1,22 @@
+---
+import type { DetailsType } from '@/env'
+import LayoutProd from '@/layouts/LayoutProd.astro'
+import OverviewProd from '@/components/OverviewProd.astro'
+
+export const details: DetailsType = {
+  title: 'Medidor mecánico de gas LP',
+  description:
+    'Medidor mecánico de gas LP, para tanques estacionarios, con capacidad de',
+  image: 'mecha.jpg',
+  urlMercado: '',
+  urlAmazon: '',
+  keywords: [],
+  popular: false,
+}
+---
+
+<LayoutProd {...details}>
+  <main>
+    <OverviewProd {...details} />
+  </main>
+</LayoutProd>

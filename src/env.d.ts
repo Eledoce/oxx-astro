@@ -7,4 +7,6 @@ export type DetailsType = {
   image: string
   urlMercado: string
   urlAmazon: string
+  keywords: string[]
+  popular: boolean
 }

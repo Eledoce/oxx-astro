@@ -1,16 +1,17 @@
 ---
 import type { DetailsType } from '../../env'
 import baseUrl from '@/scripts/base'
-const { title, description, image, url } = Astro.props
+const { title, description, image, url, popular } = Astro.props
 // limitando descripcion a 100 caracteres
 let descriptionLimit = description ? description.slice(0, 100) : null
 descriptionLimit = descriptionLimit ? `${descriptionLimit}...` : null
 ---
 
 <div
-  class="bg-white border border-gray-200 rounded-lg shadow-md flex flex-col font-Roboto"
+  class="bg-white border border-gray-200 rounded-lg shadow-md flex flex-col font-Roboto relative"
   transition:name={`image-${image}`}
 >
+  {popular && <div class="popular">Más vendido!</div>}
   <img
     class="rounded-t-lg h-60 mx-auto pt-5"
     src={`${baseUrl}/prods/${image}`}
@@ -50,3 +51,28 @@ descriptionLimit = descriptionLimit ? `${descriptionLimit}...` : null
     </a>
   </div>
 </div>
+
+<style>
+  .popular {
+    @apply bg-rose-500 h-20 w-20 font-semibold text-center leading-none flex justify-center items-center text-white rounded-full -rotate-[25deg] -top-2 -left-2 md:-top-10 md:-left-10 shadow-lg absolute z-10;
+  }
+  .popular::before {
+    @apply bg-rose-500 h-20 w-20 font-semibold text-center leading-none flex justify-center items-center text-white rounded-full -rotate-[25deg]  shadow-lg absolute -z-10 top-0 left-0;
+    content: '';
+    animation: ping 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  }
+
+  @keyframes ping {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+      z-index: -10;
+    }
+    75%,
+    100% {
+      transform: scale(1.3);
+      opacity: 0;
+      z-index: -10;
+    }
+  }
+</style>

@@ -1,0 +1,22 @@
+---
+import type { DetailsType } from '@/env'
+import LayoutProd from '@/layouts/LayoutProd.astro'
+import OverviewProd from '@/components/OverviewProd.astro'
+
+export const details: DetailsType = {
+  title: 'Medidor De Gas Kumho Kg2',
+  description:
+    'El medidor de gas pequeño más adecuado (GLP, GN, aire, gas nitrógeno, gas inerte también disponible).',
+  image: 'kumho.webp',
+  urlMercado: '',
+  urlAmazon: '',
+  keywords: [],
+  popular: false,
+}
+---
+
+<LayoutProd {...details}>
+  <main>
+    <OverviewProd {...details} />
+  </main>
+</LayoutProd>
