@@ -1,6 +1,9 @@
 ---
 interface Props {
   title: string
+  keywords: string[]
+  description: string
+  image: string
 }
 
 import Header from '../components/Header.astro'
@@ -12,16 +15,41 @@ import '@fontsource/roboto'
 // Supports weights 100-900
 import '@fontsource-variable/inter'
 
-const { title } = Astro.props
+const { title, description, image, keywords } = Astro.props
 ---
 
 <!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
+    <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- Keywords -->
+    <meta name="keywords" content={keywords.join(', ')} />
+
+    <!-- META TAGS -->
+    <!-- Primary Meta Tags -->
+    <meta name="title" content=`OOX | ${title}` />
+    <meta name="description" content={description} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="ooxmexico.com/" />
+    <meta property="og:title" content=`OOX | ${title}` />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+
+    <!-- Twitter -->
+
+    <meta property="twitter:url" content="ooxmexico.com/" />
+    <meta
+      property="twitter:title"
+      content="OOX | Si lo quieres, OOX lo tiene"
+    />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={image} />
+
     <ViewTransitions />
     <title>{title}</title>
   </head>
