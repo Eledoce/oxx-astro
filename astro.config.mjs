@@ -10,6 +10,7 @@ export default defineConfig({
     host: true,
   },
 
-  site: 'https://eledoce.github.io/',
+  // site: 'https://oxxmexico.com',
+  site: 'https://eledoce.github.io/', // modo desarrollo y poner en /scrips/base.js la url con "/oxx-astro"
   base: 'oxx-astro',
 })
